@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 18:04:08 by bmaluend          #+#    #+#             */
-/*   Updated: 2025/02/13 13:11:36 by bmaluend         ###   ########.fr       */
+/*   Created: 2025/02/13 14:43:51 by bmaluend          #+#    #+#             */
+/*   Updated: 2025/02/13 15:02:52 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
 
-int ft_isalpha(int);
+int	ft_strlen(const char*);
 
 int	main(){
-	int	c, result;
+	char	c1[] = "Hola mundo";
+	char	c2[] = "Programando en C!";
+	char	c3[] = "Que subidon";
 
-	printf("Ingresa un numero: ");
-	scanf("%d", &c);
-	result = ft_isalpha(c);
-	printf("%d", result);
+	printf("\n%d", ft_strlen(c1));
+	printf("\n%d", ft_strlen(c2));
+	printf("\n%d", ft_strlen(c3));
 	return (0);
 };
 
-int	ft_isalpha(int	c){
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)){
-		return (1);
-	} else {
-		return (0);
+int	ft_strlen(const char* cadena){
+	size_t lenght;
+
+	lenght = 0;
+	while (cadena[lenght] != '\0'){
+		lenght++;
 	};
+	return (lenght);
 };

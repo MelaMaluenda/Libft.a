@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 18:04:08 by bmaluend          #+#    #+#             */
-/*   Updated: 2025/02/13 13:11:36 by bmaluend         ###   ########.fr       */
+/*   Created: 2025/02/13 14:16:48 by bmaluend          #+#    #+#             */
+/*   Updated: 2025/02/13 14:41:52 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
 
-int ft_isalpha(int);
+int	ft_isprint(int);
 
 int	main(){
 	int	c, result;
-
-	printf("Ingresa un numero: ");
+	
+	printf("Ingresa un caracter imprimible: ");
 	scanf("%d", &c);
-	result = ft_isalpha(c);
-	printf("%d", result);
+	result = ft_isprint(c);
+	printf("\n%d", result);
 	return (0);
 };
 
-int	ft_isalpha(int	c){
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)){
+int	ft_isprint(int c){
+	if (c >= 32 && c <= 126){
 		return (1);
 	} else {
 		return (0);

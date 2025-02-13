@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 18:04:08 by bmaluend          #+#    #+#             */
-/*   Updated: 2025/02/13 13:11:36 by bmaluend         ###   ########.fr       */
+/*   Created: 2025/02/13 17:00:08 by bmaluend          #+#    #+#             */
+/*   Updated: 2025/02/13 17:22:54 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
 
-int ft_isalpha(int);
+void	*ft_memcpy(void *dst, const void	*src, size_t	n);
 
 int	main(){
-	int	c, result;
+	char	src[] = "Hola mundo";
+	char	dst[20];
 
-	printf("Ingresa un numero: ");
-	scanf("%d", &c);
-	result = ft_isalpha(c);
-	printf("%d", result);
+	ft_memcpy(dst, src, 10);
+	printf("src: %s", src);
+	printf("\ndst: %s", dst);
 	return (0);
 };
 
-int	ft_isalpha(int	c){
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)){
-		return (1);
-	} else {
-		return (0);
+void	*ft_memcpy(void	*dst, const void	*src, size_t	n){
+	unsigned char	*temp1, *temp2;
+
+	temp1 = (unsigned char*)dst;
+	temp2 = (unsigned char*)src;
+
+	while ( n > 0){
+		*(temp1++) = *(temp2++);
+		n--;
 	};
+	return (dst);
 };

@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 18:04:08 by bmaluend          #+#    #+#             */
-/*   Updated: 2025/02/13 13:11:36 by bmaluend         ###   ########.fr       */
+/*   Created: 2025/02/13 13:14:09 by bmaluend          #+#    #+#             */
+/*   Updated: 2025/02/13 13:37:30 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdio.h>
 
-int ft_isalpha(int);
+int	ft_isdigit(int);
 
 int	main(){
-	int	c, result;
+	char	c;
+	int	result;
 
-	printf("Ingresa un numero: ");
-	scanf("%d", &c);
-	result = ft_isalpha(c);
-	printf("%d", result);
+	printf("\nIngresa un caracter: ");
+	scanf("%c", &c);
+	result = ft_isdigit(c);
+	printf("\n%d", result);
 	return (0);
 };
 
-int	ft_isalpha(int	c){
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)){
+int	ft_isdigit(int c){
+	if (c >= '0' && c <= '9'){
 		return (1);
 	} else {
 		return (0);
